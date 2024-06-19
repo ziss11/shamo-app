@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Shamo</string>
+    <string name="login">Login</string>
+    <string name="sign_in_to_continue">Sign In to Continue</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="your_email_address">Your Email Address</string>
+    <string name="your_password">Your Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_account_sign_up">Don\'t have account? Sign Up</string>
 </resources>
