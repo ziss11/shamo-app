@@ -11,18 +11,20 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
+import com.google.android.material.textfield.TextInputLayout.END_ICON_NONE
+import com.google.android.material.textfield.TextInputLayout.END_ICON_PASSWORD_TOGGLE
+import com.ziss.shamoapp.MainActivity
 import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.hideSoftKeyboard
-import com.ziss.shamoapp.databinding.ActivityLoginBinding
+import com.ziss.shamoapp.databinding.ActivitySignUpBinding
 
-
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
-    private val binding by lazy { ActivityLoginBinding.inflate(layoutInflater) }
+class SignUpActivity : AppCompatActivity(), View.OnClickListener {
+    private val binding by lazy { ActivitySignUpBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +36,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        buildSignUpRichText()
+        buildSignInRichText()
 
         binding.main.setOnClickListener(this)
-        binding.btnLogin.setOnClickListener(this)
+        binding.btnSignUp.setOnClickListener(this)
+
+        binding.etPassword.addTextChangedListener {
+            binding.tilPassword.endIconMode = if (!it.isNullOrEmpty()) {
+                END_ICON_PASSWORD_TOGGLE
+            } else {
+                END_ICON_NONE
+            }
+        }
     }
 
     override fun onClick(view: View?) {
@@ -47,33 +57,34 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 clearFocus()
             }
 
-            binding.btnLogin.id -> onLogin()
+            binding.btnSignUp.id -> onSignUp()
         }
     }
 
-    private fun buildSignUpRichText() {
-        val signUpOnClick = object : ClickableSpan() {
+    private fun buildSignInRichText() {
+        val signInOnClick = object : ClickableSpan() {
             override fun updateDrawState(ds: TextPaint) {
-                ds.color = this@LoginActivity.getColor(R.color.purple)
+                ds.color = this@SignUpActivity.getColor(R.color.purple)
             }
 
             override fun onClick(view: View) {
-                Toast.makeText(this@LoginActivity, "Go to Sign Up", Toast.LENGTH_SHORT).show()
+                SignInActivity.start(this@SignUpActivity)
+                finish()
             }
         }
 
-        val signUpSpannable = SpannableStringBuilder(binding.btnGoToSignUp.text).apply {
+        val signInSpannable = SpannableStringBuilder(binding.btnGoToSignIn.text).apply {
             setSpan(
-                signUpOnClick,
-                20,
-                binding.btnGoToSignUp.text.length,
+                signInOnClick,
+                24,
+                binding.btnGoToSignIn.text.length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
 
-        binding.btnGoToSignUp.text = signUpSpannable
-        binding.btnGoToSignUp.movementMethod = LinkMovementMethod.getInstance()
-        binding.btnGoToSignUp.highlightColor = Color.TRANSPARENT
+        binding.btnGoToSignIn.text = signInSpannable
+        binding.btnGoToSignIn.movementMethod = LinkMovementMethod.getInstance()
+        binding.btnGoToSignIn.highlightColor = Color.TRANSPARENT
     }
 
     private fun clearFocus() {
@@ -81,20 +92,25 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding.etPassword.clearFocus()
     }
 
-    private fun onLogin() {
+    private fun onSignUp() {
+        val fullName = binding.etFullName.text.toString()
+        val username = binding.etUsername.text.toString()
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
-        Log.d(TAG, "onLogin: $email, $password")
+        Log.d(TAG, "onSignUp: $fullName, $username, $email, $password")
 
         hideSoftKeyboard()
         clearFocus()
+
+        MainActivity.start(this)
+        finish()
     }
 
     companion object {
-        private val TAG = LoginActivity::class.java.simpleName
+        private val TAG = SignUpActivity::class.java.simpleName
         fun start(context: Context) {
-            Intent(context, LoginActivity::class.java).apply {
+            Intent(context, SignUpActivity::class.java).apply {
                 context.startActivity(this)
             }
         }

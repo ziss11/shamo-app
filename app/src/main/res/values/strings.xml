@@ -8,4 +8,16 @@
     <string name="your_password">Your Password</string>
     <string name="sign_in">Sign In</string>
     <string name="don_t_have_account_sign_up">Don\'t have account? Sign Up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register_and_happy_shoping">Register and Happy Shoping</string>
+    <string name="username">Username</string>
+    <string name="full_name">Full Name</string>
+    <string name="your_full_name">Your Full Name</string>
+    <string name="your_username">Your Username</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="home">Home</string>
+    <string name="chats">Chats</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <string name="go_to_cart_page">Go to Cart Page</string>
 </resources>
