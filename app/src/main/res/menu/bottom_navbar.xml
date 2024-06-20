@@ -3,32 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_home"
+        android:id="@+id/navigationHome"
         android:icon="@drawable/ic_home"
         android:title="@string/home"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_chats"
+        android:id="@+id/navigationChats"
         android:icon="@drawable/ic_message"
         android:title="@string/chats"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_blank"
+        android:id="@+id/navigationBlank"
         android:enabled="false"
         android:title=""
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_favorites"
+        android:id="@+id/navigationFavorites"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorites"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/menu_profile"
+        android:id="@+id/navigationProfile"
         android:icon="@drawable/ic_person"
         android:title="@string/profile"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 </menu>

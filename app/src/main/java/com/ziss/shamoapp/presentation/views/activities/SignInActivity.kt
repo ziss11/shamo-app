@@ -36,18 +36,11 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        buildSignUpRichText()
-
         binding.main.setOnClickListener(this)
         binding.btnLogin.setOnClickListener(this)
 
-        binding.etPassword.addTextChangedListener {
-            binding.tilPassword.endIconMode = if (!it.isNullOrEmpty()) {
-                END_ICON_PASSWORD_TOGGLE
-            } else {
-                END_ICON_NONE
-            }
-        }
+        buildSignUpRichText()
+        handlePasswordVisibility()
     }
 
     override fun onClick(view: View?) {
@@ -87,6 +80,16 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnGoToSignUp.highlightColor = Color.TRANSPARENT
     }
 
+    private fun handlePasswordVisibility() {
+        binding.etPassword.addTextChangedListener {
+            binding.tilPassword.endIconMode = if (!it.isNullOrEmpty()) {
+                END_ICON_PASSWORD_TOGGLE
+            } else {
+                END_ICON_NONE
+            }
+        }
+    }
+
     private fun clearFocus() {
         binding.etEmail.clearFocus()
         binding.etPassword.clearFocus()
@@ -107,6 +110,8 @@ class SignInActivity : AppCompatActivity(), View.OnClickListener {
 
     companion object {
         private val TAG = SignInActivity::class.java.simpleName
+
+        @JvmStatic
         fun start(context: Context) {
             Intent(context, SignInActivity::class.java).apply {
                 context.startActivity(this)
