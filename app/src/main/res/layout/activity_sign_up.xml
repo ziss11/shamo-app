@@ -20,12 +20,14 @@
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
+                style="@style/FontSemiBold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
                 android:textSize="20sp" />
 
             <com.google.android.material.textview.MaterialTextView
+                style="@style/FontRegular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -37,6 +39,7 @@
     </com.google.android.material.appbar.MaterialToolbar>
 
     <com.google.android.material.textview.MaterialTextView
+        style="@style/FontMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -59,6 +62,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etFullName"
+            style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
@@ -69,6 +73,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        style="@style/FontMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -91,6 +96,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUsername"
+            style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
@@ -101,6 +107,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        style="@style/FontMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -123,6 +130,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
+            style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_email"
@@ -133,6 +141,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        style="@style/FontSemiBold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
@@ -156,6 +165,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
+            style="@style/FontMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_lock"
@@ -168,6 +178,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
+        style="@style/FontMedium"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginHorizontal="16dp"
@@ -179,6 +190,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/btnGoToSignIn"
+        style="@style/FontRegular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
