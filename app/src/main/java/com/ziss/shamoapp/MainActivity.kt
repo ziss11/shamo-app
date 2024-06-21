@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             supportFragmentManager.findFragmentById(binding.container.id) as NavHostFragment
         val navController = navHostFragment.navController
 
-        binding.bottomNavbar.setupWithNavController(navController)
+        binding.bottomNavView.setupWithNavController(navController)
     }
 
     private fun roundedBottomAppBar() {

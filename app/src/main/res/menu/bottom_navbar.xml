@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/navigationHome"
         android:icon="@drawable/ic_home"
-        android:title="@string/home"
-        app:showAsAction="ifRoom" />
+        android:title="@string/home" />
 
     <item
         android:id="@+id/navigationChats"
         android:icon="@drawable/ic_message"
-        android:title="@string/chats"
-        app:showAsAction="ifRoom" />
+        android:title="@string/chats" />
 
     <item
         android:id="@+id/navigationBlank"
         android:enabled="false"
-        android:title=""
-        app:showAsAction="ifRoom" />
+        android:title="" />
 
     <item
         android:id="@+id/navigationFavorites"
         android:icon="@drawable/ic_favorite"
-        android:title="@string/favorites"
-        app:showAsAction="ifRoom" />
+        android:title="@string/favorites" />
 
     <item
         android:id="@+id/navigationProfile"
         android:icon="@drawable/ic_person"
-        android:title="@string/profile"
-        app:showAsAction="ifRoom" />
+        android:title="@string/profile" />
 </menu>
