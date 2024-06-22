@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentProductByCategoryBinding
+import com.ziss.shamoapp.presentation.adapters.ProductItemAdapter
 
 class ProductByCategoryFragment : Fragment() {
     private var _binding: FragmentProductByCategoryBinding? = null
@@ -26,6 +29,29 @@ class ProductByCategoryFragment : Fragment() {
     ): View {
         _binding = FragmentProductByCategoryBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupProductByCategoryList()
+    }
+
+    private fun setupProductByCategoryList() {
+        val itemAdapter = ProductItemAdapter()
+        val itemLayoutManager =
+            object : LinearLayoutManager(requireActivity(), VERTICAL, false) {
+                override fun canScrollVertically(): Boolean {
+                    return false
+                }
+            }
+        val itemDecoration = MarginVerticalItemDecoration(30)
+
+        binding.apply {
+            rvProductByCategoryList.adapter = itemAdapter
+            rvProductByCategoryList.layoutManager = itemLayoutManager
+            rvProductByCategoryList.addItemDecoration(itemDecoration)
+        }
     }
 
     companion object {
