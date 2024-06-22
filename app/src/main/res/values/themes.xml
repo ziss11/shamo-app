@@ -23,4 +23,8 @@
     <style name="FabRounded" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="RoundedCorner" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>
