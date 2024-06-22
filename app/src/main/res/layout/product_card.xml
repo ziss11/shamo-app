@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="215dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/cardWhite"
+    app:cardCornerRadius="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImage"
+            android:layout_width="215dp"
+            android:layout_height="165dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/shoes_example" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCategory"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            tools:text="Hiking" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            style="@style/FontSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black1"
+            android:textSize="18sp"
+            tools:text="COURT VISION 2.0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvPrice"
+            style="@style/FontMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/blue"
+            android:textSize="12sp"
+            tools:text="$58,67" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

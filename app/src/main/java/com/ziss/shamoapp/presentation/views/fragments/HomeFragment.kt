@@ -39,6 +39,7 @@ class HomeFragment : Fragment() {
     private fun setUpTabLayout() {
         val pageAdapter = ProductPageAdapter(requireActivity(), TABS.size)
         binding.viewPager.adapter = pageAdapter
+        binding.viewPager.isUserInputEnabled = false
 
         TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
             tab.text = TABS[position]
