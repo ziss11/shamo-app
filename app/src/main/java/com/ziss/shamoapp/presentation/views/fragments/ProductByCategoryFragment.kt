@@ -33,18 +33,13 @@ class ProductByCategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupProductByCategoryList()
     }
 
     private fun setupProductByCategoryList() {
         val itemAdapter = ProductItemAdapter()
         val itemLayoutManager =
-            object : LinearLayoutManager(requireActivity(), VERTICAL, false) {
-                override fun canScrollVertically(): Boolean {
-                    return false
-                }
-            }
+            LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         val itemDecoration = MarginVerticalItemDecoration(30)
 
         binding.apply {

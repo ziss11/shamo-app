@@ -26,17 +26,17 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpToolbarText()
-        setUpTabLayout()
+        setupToolbarText()
+        setupTabLayout()
     }
 
-    private fun setUpToolbarText() {
+    private fun setupToolbarText() {
         binding.toolbarTitle.text = getString(R.string.home_toolbar_title, "Azis")
         binding.toolbarSubtitle.text = "@ziss"
     }
 
     @SuppressLint("InflateParams")
-    private fun setUpTabLayout() {
+    private fun setupTabLayout() {
         val pageAdapter = ProductPageAdapter(requireActivity(), TABS.size)
         binding.viewPager.adapter = pageAdapter
         binding.viewPager.isUserInputEnabled = false
