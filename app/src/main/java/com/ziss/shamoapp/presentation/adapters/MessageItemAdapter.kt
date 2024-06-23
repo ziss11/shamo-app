@@ -32,14 +32,14 @@ class MessageItemAdapter : RecyclerView.Adapter<MessageItemAdapter.ListViewHolde
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ListViewHolder {
+    ): MessageItemAdapter.ListViewHolder {
         val binding = MessageItemBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
         return ListViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MessageItemAdapter.ListViewHolder, position: Int) {
         holder.bind()
     }
 

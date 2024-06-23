@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentChatsBinding
 import com.ziss.shamoapp.presentation.adapters.MessageItemAdapter
-import com.ziss.shamoapp.presentation.views.activities.ChatDetailActivity
 
 class ChatsFragment : Fragment() {
     private var _binding: FragmentChatsBinding? = null
@@ -29,17 +28,12 @@ class ChatsFragment : Fragment() {
     }
 
     private fun setupMessagesList() {
+        val adapter = MessageItemAdapter()
         val layoutManager = LinearLayoutManager(requireActivity())
         val marginItemDecoration = MarginVerticalItemDecoration(50)
         val dividerItemDecoration = DividerItemDecoration(
             requireActivity(), DividerItemDecoration.VERTICAL,
         )
-        val adapter = MessageItemAdapter()
-        adapter.setOnItemClickCallback(object : MessageItemAdapter.OnItemClickCallback {
-            override fun onItemClicked() {
-                ChatDetailActivity.start(requireActivity(), 1)
-            }
-        })
 
         binding.apply {
             rvMessages.adapter = adapter
@@ -47,7 +41,7 @@ class ChatsFragment : Fragment() {
             rvMessages.addItemDecoration(marginItemDecoration)
             rvMessages.addItemDecoration(dividerItemDecoration)
         }
-
+        
         setMessageListVisibility(true)
     }
 
