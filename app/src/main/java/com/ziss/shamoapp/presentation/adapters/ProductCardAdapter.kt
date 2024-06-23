@@ -12,10 +12,12 @@ class ProductCardAdapter : RecyclerView.Adapter<ProductCardAdapter.ListViewHolde
     inner class ListViewHolder(private val binding: ProductCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-            binding.ivImage.loadImage(R.drawable.shoes_example)
-            binding.tvCategory.text = "Hiking"
-            binding.tvTitle.text = "COURT VISION 2.0"
-            binding.tvPrice.text = 20500.toLocalCurrency()
+            binding.apply {
+                ivImage.loadImage(R.drawable.shoes_example)
+                tvCategory.text = "Hiking"
+                tvTitle.text = "COURT VISION 2.0"
+                tvPrice.text = 20500.toLocalCurrency()
+            }
         }
     }
 
