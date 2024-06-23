@@ -23,4 +23,5 @@
     <string name="home_toolbar_title">Hello, %s</string>
     <string name="popular_products">Popular Products</string>
     <string name="new_arrivals">New Arrivals</string>
+    <string name="for_you">For You</string>
 </resources>

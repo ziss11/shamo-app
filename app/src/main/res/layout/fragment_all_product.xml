@@ -12,12 +12,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             style="@style/FontSemiBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/popular_products"
             android:textSize="22sp" />
@@ -33,7 +33,7 @@
             tools:listitem="@layout/product_card"
             tools:orientation="horizontal" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             style="@style/FontSemiBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
