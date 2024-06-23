@@ -3,12 +3,17 @@ package com.ziss.shamoapp.common
 import android.app.Activity
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import java.text.NumberFormat
 import java.util.Locale
 
-fun ImageView.loadImage(url: Any?) {
+fun ImageView.loadImage(@DrawableRes url: Int) {
+    Glide.with(this.context).load(url).into(this)
+}
+
+fun ImageView.loadImage(url: String) {
     Glide.with(this.context).load(url).into(this)
 }
 
