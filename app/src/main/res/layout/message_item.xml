@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/imageLayout"
         android:layout_width="54dp"
         android:layout_height="54dp"
         android:background="@drawable/circle_bg"

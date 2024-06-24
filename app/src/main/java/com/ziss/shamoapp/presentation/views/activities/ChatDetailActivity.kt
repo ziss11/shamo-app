@@ -4,13 +4,16 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.ziss.shamoapp.R
+import com.ziss.shamoapp.common.loadImage
 import com.ziss.shamoapp.databinding.ActivityChatDetailBinding
 
-class ChatDetailActivity : AppCompatActivity() {
+class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
     private val binding by lazy { ActivityChatDetailBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,11 +27,27 @@ class ChatDetailActivity : AppCompatActivity() {
         }
 
         getChatDetails()
+        setupAppBarContent()
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            binding.btnBack.id -> this.finish()
+        }
     }
 
     private fun getChatDetails() {
         val id = intent.getStringExtra(EXTRA_CHAT_ID)
         Log.d(TAG, id.toString())
+    }
+
+    private fun setupAppBarContent() {
+        binding.apply {
+            ivImage.loadImage(R.drawable.ic_logo)
+            tvName.text = "Shoe Store"
+            tvOnlineStatus.text = "Online"
+            btnBack.setOnClickListener(this@ChatDetailActivity)
+        }
     }
 
     companion object {
