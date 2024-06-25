@@ -35,10 +35,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             WindowInsetsCompat.CONSUMED
         }
 
-        binding.fabCart.setOnClickListener(this)
-
         setUpNavHostFragment()
         roundedBottomAppBar()
+
+        binding.fabCart.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {

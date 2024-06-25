@@ -6,24 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".presentation.views.fragments.ChatsFragment">
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <include
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        layout="@layout/app_toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textview.MaterialTextView
-            style="@style/FontMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="@string/message_support"
-            android:textAlignment="center"
-            android:textSize="18sp" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/horizontalLine"
@@ -57,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/opss_no_message_yet"
+            android:text="@string/ops_no_message_yet"
             android:textSize="16sp" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -68,6 +56,16 @@
             android:text="@string/you_have_never_done_a_transaction"
             android:textColor="@color/grey"
             android:textSize="14sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExploreStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/purple"
+            android:text="@string/explore_store"
+            android:textColor="@color/white"
+            app:cornerRadius="12dp" />
 
     </LinearLayout>
 
@@ -80,7 +78,7 @@
         android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
         android:paddingBottom="230dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

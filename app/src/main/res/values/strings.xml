@@ -24,14 +24,19 @@
     <string name="popular_products">Popular Products</string>
     <string name="new_arrivals">New Arrivals</string>
     <string name="for_you">For You</string>
-    <string name="opss_no_message_yet">Opss no message yet?</string>
+    <string name="ops_no_message_yet">Ops no message yet?</string>
     <string name="you_have_never_done_a_transaction">You have never done a transaction</string>
     <string name="message_support">Message Support</string>
     <string name="empty_state_icon">Empty State Icon</string>
     <string name="back_button">Back Button</string>
-    <string name="type_message">Type Message...</string>
+    <string name="type_message">Type Message…</string>
     <string name="clear_product_in_message_button">Clear Product in Message button</string>
     <string name="sending_status">Sending Status</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="buy_now">Buy Now</string>
+    <string name="favorite_shoes">Favorite Shoes</string>
+    <string name="you_don_t_have_dream_shoes">You don\'t have dream shoes?</string>
+    <string name="let_s_find_your_favorite_shoes">Let\'s find your favorite shoes</string>
+    <string name="explore_store">Explore Store</string>
+    <string name="button_favorite">Button Favorite</string>
 </resources>

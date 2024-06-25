@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentChatsBinding
 import com.ziss.shamoapp.presentation.adapters.ChatItemAdapter
 import com.ziss.shamoapp.presentation.views.activities.ChatDetailActivity
 
-class ChatsFragment : Fragment() {
+class ChatsFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentChatsBinding? = null
     private val binding get() = _binding!!
 
@@ -24,7 +26,22 @@ class ChatsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setupToolbar()
         setupMessagesList()
+
+        binding.btnExploreStore.setOnClickListener(this)
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            binding.btnExploreStore.id -> {
+                findNavController().navigate(R.id.navigationHome)
+            }
+        }
+    }
+
+    private fun setupToolbar() {
+        binding.toolbar.tvTitle.text = resources.getString(R.string.message_support)
     }
 
     private fun setupMessagesList() {
@@ -44,6 +61,7 @@ class ChatsFragment : Fragment() {
             rvChats.addItemDecoration(marginItemDecoration)
         }
 
+        setEmptyStateVisibility(false)
         setMessageListVisibility(true)
     }
 
