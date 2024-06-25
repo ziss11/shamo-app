@@ -48,10 +48,12 @@
         android:layout_marginBottom="4dp"
         android:background="@android:color/transparent"
         android:clipToPadding="false"
-        android:paddingHorizontal="6dp"
+        android:paddingHorizontal="12dp"
         app:tabGravity="center"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
+        app:tabPaddingEnd="4dp"
+        app:tabPaddingStart="4dp"
         app:tabRippleColor="@null" />
 
     <androidx.viewpager2.widget.ViewPager2
