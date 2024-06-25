@@ -11,7 +11,6 @@ import com.google.android.material.textview.MaterialTextView
 import com.ziss.shamoapp.R
 import com.ziss.shamoapp.databinding.FragmentHomeBinding
 import com.ziss.shamoapp.presentation.adapters.ProductPageAdapter
-import com.ziss.shamoapp.presentation.views.activities.EditProfileActivity
 import com.ziss.shamoapp.presentation.views.activities.SearchActivity
 
 class HomeFragment : Fragment() {
@@ -28,7 +27,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupToolbarText()
         setupTabLayout()
 
         binding.searchBar.setOnClickListener {
@@ -36,16 +34,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun setupToolbarText() {
-        binding.apply {
-            toolbarTitle.text = getString(R.string.home_toolbar_title, "Azis")
-            toolbarSubtitle.text = "@ziss"
-
-            ivProfile.setOnClickListener {
-                EditProfileActivity.start(requireContext())
-            }
-        }
-    }
 
     @SuppressLint("InflateParams")
     private fun setupTabLayout() {

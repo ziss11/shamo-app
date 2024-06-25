@@ -47,7 +47,7 @@ class FavoritesFragment : Fragment(), View.OnClickListener {
     private fun setupFavoriteList() {
         val adapter = FavoriteItemAdapter()
         val layoutManager = LinearLayoutManager(requireActivity())
-        val itemDecoration = MarginVerticalItemDecoration(50)
+        val itemDecoration = MarginVerticalItemDecoration(60)
 
         adapter.setOnClickCallback(object : FavoriteItemAdapter.OnItemClickCallback {
             override fun onItemClicked() {
