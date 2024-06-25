@@ -1,13 +1,19 @@
 package com.ziss.shamoapp.common
 
 import android.app.Activity
+import android.content.Context
 import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import java.text.NumberFormat
 import java.util.Locale
+
+fun String.makeToast(context: Context) {
+    Toast.makeText(context, this, Toast.LENGTH_SHORT).show()
+}
 
 fun ImageView.loadImage(@DrawableRes url: Int) {
     Glide.with(this.context).load(url).into(this)

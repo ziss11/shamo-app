@@ -39,4 +39,13 @@
     <string name="let_s_find_your_favorite_shoes">Let\'s find your favorite shoes</string>
     <string name="explore_store">Explore Store</string>
     <string name="button_favorite">Button Favorite</string>
+    <string name="logout_button">Logout Button</string>
+    <string name="account">Account</string>
+    <string name="general">General</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="your_orders">Your Orders</string>
+    <string name="help">Help</string>
+    <string name="privacy_policy"><![CDATA[Privacy & Policy]]></string>
+    <string name="term_of_service">Term Of Service</string>
+    <string name="rate_app">Rate App</string>
 </resources>
