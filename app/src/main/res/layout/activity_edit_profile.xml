@@ -89,7 +89,7 @@
                 app:layout_constraintTop_toBottomOf="@id/ivProfile" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tlFullName"
+                android:id="@+id/tilFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -124,10 +124,10 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tlFullName" />
+                app:layout_constraintTop_toBottomOf="@id/tilFullName" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tlUsername"
+                android:id="@+id/tilUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -162,10 +162,10 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tlUsername" />
+                app:layout_constraintTop_toBottomOf="@id/tilUsername" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tlEmail"
+                android:id="@+id/tilEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -200,10 +200,10 @@
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tlEmail" />
+                app:layout_constraintTop_toBottomOf="@id/tilEmail" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tlPhoneNumber"
+                android:id="@+id/tilPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"

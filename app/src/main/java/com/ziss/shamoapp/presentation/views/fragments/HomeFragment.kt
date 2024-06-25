@@ -12,6 +12,7 @@ import com.ziss.shamoapp.R
 import com.ziss.shamoapp.databinding.FragmentHomeBinding
 import com.ziss.shamoapp.presentation.adapters.ProductPageAdapter
 import com.ziss.shamoapp.presentation.views.activities.EditProfileActivity
+import com.ziss.shamoapp.presentation.views.activities.SearchActivity
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -29,6 +30,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbarText()
         setupTabLayout()
+
+        binding.searchBar.setOnClickListener {
+            SearchActivity.start(requireContext())
+        }
     }
 
     private fun setupToolbarText() {

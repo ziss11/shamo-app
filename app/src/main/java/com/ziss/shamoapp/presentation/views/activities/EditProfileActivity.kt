@@ -75,6 +75,7 @@ class EditProfileActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     companion object {
+        @JvmStatic
         fun start(context: Context) {
             Intent(context, EditProfileActivity::class.java).apply {
                 context.startActivity(this)
