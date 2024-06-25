@@ -48,4 +48,7 @@
     <string name="privacy_policy"><![CDATA[Privacy & Policy]]></string>
     <string name="term_of_service">Term Of Service</string>
     <string name="rate_app">Rate App</string>
+    <string name="save">Save</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="your_phone_number">Your Phone Number</string>
 </resources>

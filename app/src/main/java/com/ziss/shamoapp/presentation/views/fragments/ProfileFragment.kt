@@ -9,6 +9,7 @@ import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.loadImage
 import com.ziss.shamoapp.common.makeToast
 import com.ziss.shamoapp.databinding.FragmentProfileBinding
+import com.ziss.shamoapp.presentation.views.activities.EditProfileActivity
 import com.ziss.shamoapp.presentation.views.activities.SignInActivity
 
 class ProfileFragment : Fragment(), View.OnClickListener {
@@ -37,7 +38,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             }
 
             binding.settingEditProfile.container.id -> {
-                getString(R.string.edit_profile).makeToast(requireActivity())
+                EditProfileActivity.start(requireActivity())
             }
 
             binding.settingYourOrders.container.id -> {

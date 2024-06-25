@@ -45,7 +45,7 @@ class ChatDetailActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            binding.btnBack.id -> this.finish()
+            binding.btnBack.id -> finish()
             binding.main.id -> {
                 hideSoftKeyboard()
                 binding.etMessage.clearFocus()

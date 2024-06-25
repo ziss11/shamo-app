@@ -13,6 +13,10 @@
         android:theme="@style/Theme.ShamoApp"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.views.activities.EditProfileActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name=".presentation.views.activities.ChatDetailActivity"
             android:exported="false" />
         <activity
@@ -21,11 +25,13 @@
         <activity
             android:name=".presentation.views.activities.SignUpActivity"
             android:exported="false"
-            android:theme="@style/Theme.ShamoApp" />
+            android:theme="@style/Theme.ShamoApp"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".presentation.views.activities.SignInActivity"
             android:exported="false"
-            android:theme="@style/Theme.ShamoApp" />
+            android:theme="@style/Theme.ShamoApp"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

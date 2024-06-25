@@ -11,6 +11,7 @@ import com.google.android.material.textview.MaterialTextView
 import com.ziss.shamoapp.R
 import com.ziss.shamoapp.databinding.FragmentHomeBinding
 import com.ziss.shamoapp.presentation.adapters.ProductPageAdapter
+import com.ziss.shamoapp.presentation.views.activities.EditProfileActivity
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -34,6 +35,10 @@ class HomeFragment : Fragment() {
         binding.apply {
             toolbarTitle.text = getString(R.string.home_toolbar_title, "Azis")
             toolbarSubtitle.text = "@ziss"
+
+            ivProfile.setOnClickListener {
+                EditProfileActivity.start(requireContext())
+            }
         }
     }
 
