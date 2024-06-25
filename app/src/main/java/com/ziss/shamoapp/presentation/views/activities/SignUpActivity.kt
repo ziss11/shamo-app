@@ -36,11 +36,13 @@ class SignUpActivity : AppCompatActivity(), View.OnClickListener {
             insets
         }
 
-        binding.main.setOnClickListener(this)
-        binding.btnSignUp.setOnClickListener(this)
-
         buildSignInRichText()
         handlePasswordVisibility()
+
+        binding.apply {
+            binding.main.setOnClickListener(this@SignUpActivity)
+            binding.btnSignUp.setOnClickListener(this@SignUpActivity)
+        }
     }
 
     override fun onClick(view: View?) {

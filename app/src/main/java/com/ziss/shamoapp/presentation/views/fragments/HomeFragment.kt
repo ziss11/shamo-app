@@ -31,8 +31,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupToolbarText() {
-        binding.toolbarTitle.text = getString(R.string.home_toolbar_title, "Azis")
-        binding.toolbarSubtitle.text = "@ziss"
+        binding.apply {
+            toolbarTitle.text = getString(R.string.home_toolbar_title, "Azis")
+            toolbarSubtitle.text = "@ziss"
+        }
     }
 
     @SuppressLint("InflateParams")

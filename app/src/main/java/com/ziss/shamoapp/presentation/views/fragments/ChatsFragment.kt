@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentChatsBinding
-import com.ziss.shamoapp.presentation.adapters.MessageItemAdapter
+import com.ziss.shamoapp.presentation.adapters.ChatItemAdapter
 import com.ziss.shamoapp.presentation.views.activities.ChatDetailActivity
 
 class ChatsFragment : Fragment() {
@@ -29,24 +28,20 @@ class ChatsFragment : Fragment() {
     }
 
     private fun setupMessagesList() {
-        val adapter = MessageItemAdapter()
+        val adapter = ChatItemAdapter()
         val layoutManager = LinearLayoutManager(requireActivity())
-        val marginItemDecoration = MarginVerticalItemDecoration(50)
-        val dividerItemDecoration = DividerItemDecoration(
-            requireActivity(), DividerItemDecoration.VERTICAL,
-        )
+        val marginItemDecoration = MarginVerticalItemDecoration(60)
 
-        adapter.setOnItemClickCallback(object : MessageItemAdapter.OnItemClickCallback {
+        adapter.setOnItemClickCallback(object : ChatItemAdapter.OnItemClickCallback {
             override fun onItemClicked() {
                 ChatDetailActivity.start(requireActivity(), 1)
             }
         })
 
         binding.apply {
-            rvMessages.adapter = adapter
-            rvMessages.layoutManager = layoutManager
-            rvMessages.addItemDecoration(marginItemDecoration)
-            rvMessages.addItemDecoration(dividerItemDecoration)
+            rvChats.adapter = adapter
+            rvChats.layoutManager = layoutManager
+            rvChats.addItemDecoration(marginItemDecoration)
         }
 
         setMessageListVisibility(true)
@@ -57,6 +52,6 @@ class ChatsFragment : Fragment() {
     }
 
     private fun setMessageListVisibility(isVisible: Boolean) {
-        binding.rvMessages.visibility = if (isVisible) View.VISIBLE else View.GONE
+        binding.rvChats.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 }

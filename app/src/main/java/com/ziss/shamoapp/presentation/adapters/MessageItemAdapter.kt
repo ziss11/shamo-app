@@ -1,31 +1,31 @@
 package com.ziss.shamoapp.presentation.adapters
 
+import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.loadImage
-import com.ziss.shamoapp.databinding.MessageItemBinding
+import com.ziss.shamoapp.common.toLocalCurrency
+import com.ziss.shamoapp.databinding.BubbleMessageItemBinding
 
 class MessageItemAdapter : RecyclerView.Adapter<MessageItemAdapter.ListViewHolder>() {
-    private lateinit var onItemClickCallback: OnItemClickCallback
-
-//    private var messages = arrayListOf<Objects>()
-
-    interface OnItemClickCallback {
-        fun onItemClicked()
-    }
-
-    inner class ListViewHolder(private val binding: MessageItemBinding) :
+    inner class ListViewHolder(private val binding: BubbleMessageItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind() {
+        fun bind(isSender: Boolean = true, withProduct: Boolean = false) {
             binding.apply {
-                ivImage.loadImage(R.drawable.ic_logo)
-                tvTitle.text = "Shoe Store"
-                tvSubtitle.text = "Good night, This item is on"
-                tvTime.text = "Now"
+                tvMessage.text = "This is a message"
+                tvTime.text = "11:19 PM"
+
+                productInMessageItem.ivImage.loadImage(R.drawable.shoes_example)
+                productInMessageItem.tvTitle.text = "Predator 20.3 Firm Ground"
+                productInMessageItem.tvPrice.text = 20500.toLocalCurrency()
+                productInMessageItem.container.visibility =
+                    if (withProduct) View.VISIBLE else View.GONE
+
+                setBubbleMessageStyle(binding, isSender)
             }
-            itemView.setOnClickListener { onItemClickCallback.onItemClicked() }
         }
     }
 
@@ -33,29 +33,32 @@ class MessageItemAdapter : RecyclerView.Adapter<MessageItemAdapter.ListViewHolde
         parent: ViewGroup,
         viewType: Int
     ): MessageItemAdapter.ListViewHolder {
-        val binding = MessageItemBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        )
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = BubbleMessageItemBinding.inflate(inflater, parent, false)
         return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: MessageItemAdapter.ListViewHolder, position: Int) {
-        holder.bind()
+        if (position == 0) {
+            holder.bind(withProduct = true)
+        } else {
+            if (position % 2 == 0) {
+                holder.bind(isSender = false, withProduct = false)
+            } else {
+                holder.bind()
+            }
+        }
     }
 
-    override fun getItemCount() = 20
+    override fun getItemCount(): Int = 10
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
+    private fun setBubbleMessageStyle(binding: BubbleMessageItemBinding, isSender: Boolean) {
+        if (isSender) {
+            binding.container.gravity = Gravity.END
+            binding.bubbleMessageContainer.setBackgroundResource(R.drawable.sender_bubble_message_bg)
+        } else {
+            binding.container.gravity = Gravity.START
+            binding.bubbleMessageContainer.setBackgroundResource(R.drawable.receiver_bubble_message_bg)
+        }
     }
-
-//    fun setMessages(messages: List<Objects>) {
-//        val diffCallback = ListDiffUtils(this.messages, messages) { it }
-//        val diffUtil = DiffUtil.calculateDiff(diffCallback)
-//
-//        this.messages.clear()
-//        this.messages.addAll(messages)
-//
-//        diffUtil.dispatchUpdatesTo(this)
-//    }
 }

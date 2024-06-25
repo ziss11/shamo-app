@@ -25,9 +25,8 @@ class ProductCardAdapter : RecyclerView.Adapter<ProductCardAdapter.ListViewHolde
         parent: ViewGroup,
         viewType: Int
     ): ProductCardAdapter.ListViewHolder {
-        val binding = ProductCardBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false
-        )
+        val inflater = LayoutInflater.from(parent.context)
+        val binding = ProductCardBinding.inflate(inflater, parent, false)
         return ListViewHolder(binding)
     }
 

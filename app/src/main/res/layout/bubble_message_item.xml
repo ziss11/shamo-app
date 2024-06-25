@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/productInMessageItem"
+        layout="@layout/product_in_message_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bubbleMessageContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sender_bubble_message_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvMessage"
+            style="@style/FontRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hallo, Apa kabar?" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTime"
+            style="@style/FontSemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMessage"
+            android:layout_marginEnd="4dp"
+            android:textColor="@color/grey"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivSendingStatus"
+            app:layout_constraintTop_toBottomOf="@+id/tvMessage"
+            tools:text="11:19 PM" />
+
+        <ImageView
+            android:id="@+id/ivSendingStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sending_status"
+            android:src="@drawable/ic_double_tick"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+            app:layout_constraintEnd_toEndOf="@+id/tvMessage"
+            app:layout_constraintTop_toTopOf="@+id/tvTime" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -24,7 +24,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <style name="RoundedCorner" parent="ShapeAppearance.Material3.SmallComponent">
+    <style name="RoundedCorner6" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="RoundedCorner16" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerSize">16dp</item>
     </style>
 </resources>
