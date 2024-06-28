@@ -9,6 +9,19 @@ import com.ziss.shamoapp.common.toLocalCurrency
 import com.ziss.shamoapp.databinding.CartItemBinding
 
 class CartItemAdapter : RecyclerView.Adapter<CartItemAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+    private lateinit var onCartItemActionsCallback: OnCartItemActionsCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked()
+    }
+
+    interface OnCartItemActionsCallback {
+        fun increaseQuantity()
+        fun decreaseQuantity()
+        fun remove()
+    }
+
     inner class ListViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
@@ -18,10 +31,18 @@ class CartItemAdapter : RecyclerView.Adapter<CartItemAdapter.ListViewHolder>() {
                 tvPrice.text = 25000.toLocalCurrency()
                 tvQty.text = 2.toString()
 
-                btnIncreaseQty.setOnClickListener { }
-                btnDecreaseQty.setOnClickListener { }
-                btnRemove.setOnClickListener { }
+                btnIncreaseQty.setOnClickListener {
+                    onCartItemActionsCallback.increaseQuantity()
+                }
+                btnDecreaseQty.setOnClickListener {
+                    onCartItemActionsCallback.decreaseQuantity()
+                }
+                btnRemove.setOnClickListener {
+                    onCartItemActionsCallback.remove()
+                }
             }
+
+            itemView.setOnClickListener { onItemClickCallback.onItemClicked() }
         }
     }
 
@@ -39,4 +60,12 @@ class CartItemAdapter : RecyclerView.Adapter<CartItemAdapter.ListViewHolder>() {
     }
 
     override fun getItemCount(): Int = 10
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    fun setOnCartItemActionsCallback(onCartItemActionsCallback: OnCartItemActionsCallback) {
+        this.onCartItemActionsCallback = onCartItemActionsCallback
+    }
 }

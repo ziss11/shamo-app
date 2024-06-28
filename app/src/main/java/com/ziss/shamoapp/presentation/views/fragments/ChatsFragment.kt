@@ -47,7 +47,7 @@ class ChatsFragment : Fragment(), View.OnClickListener {
     private fun setupMessagesList() {
         val adapter = ChatItemAdapter()
         val layoutManager = LinearLayoutManager(requireActivity())
-        val marginItemDecoration = MarginVerticalItemDecoration(60)
+        val marginItemDecoration = MarginVerticalItemDecoration(30)
 
         adapter.setOnItemClickCallback(object : ChatItemAdapter.OnItemClickCallback {
             override fun onItemClicked() {

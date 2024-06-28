@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="2"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:text="Terrex Urban Low" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -48,19 +48,13 @@
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/btnFavorite"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:background="@drawable/circle_bg">
-
-        <ImageView
-            android:layout_width="14dp"
-            android:layout_height="12dp"
-            android:layout_gravity="center"
-            android:contentDescription="@string/button_favorite"
-            android:src="@drawable/ic_favorite_white" />
-
-    </FrameLayout>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvQuantity"
+        style="@style/FontRegular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        tools:text="2 Items" />
 
 </LinearLayout>

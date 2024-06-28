@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
+import com.ziss.shamoapp.common.makeToast
 import com.ziss.shamoapp.common.toLocalCurrency
 import com.ziss.shamoapp.databinding.ActivityCartBinding
 import com.ziss.shamoapp.presentation.adapters.CartItemAdapter
@@ -39,11 +40,8 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         when (view?.id) {
             binding.btnBack.id -> finish()
-            binding.btnExploreStore.id -> {
-                finish()
-            }
-
-            binding.btnGoToCheckout.id -> {}
+            binding.btnExploreStore.id -> finish()
+            binding.btnGoToCheckout.id -> CheckoutActivity.start(this@CartActivity)
         }
     }
 
@@ -51,6 +49,27 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         val adapter = CartItemAdapter()
         val layoutManager = LinearLayoutManager(this)
         val itemDecoration = MarginVerticalItemDecoration(30)
+
+        adapter.apply {
+            setOnItemClickCallback(object : CartItemAdapter.OnItemClickCallback {
+                override fun onItemClicked() {
+                    "Go to Product Detail".makeToast(this@CartActivity)
+                }
+            })
+            setOnCartItemActionsCallback(object : CartItemAdapter.OnCartItemActionsCallback {
+                override fun increaseQuantity() {
+                    "Increasing Quantity".makeToast(this@CartActivity)
+                }
+
+                override fun decreaseQuantity() {
+                    "Decreasing Quantity".makeToast(this@CartActivity)
+                }
+
+                override fun remove() {
+                    "Remove Item from Cart".makeToast(this@CartActivity)
+                }
+            })
+        }
 
         binding.apply {
             rvCarts.adapter = adapter

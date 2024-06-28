@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
+import com.ziss.shamoapp.common.makeToast
 import com.ziss.shamoapp.databinding.FragmentFavoritesBinding
 import com.ziss.shamoapp.presentation.adapters.FavoriteItemAdapter
 
@@ -47,19 +47,20 @@ class FavoritesFragment : Fragment(), View.OnClickListener {
     private fun setupFavoriteList() {
         val adapter = FavoriteItemAdapter()
         val layoutManager = LinearLayoutManager(requireActivity())
-        val itemDecoration = MarginVerticalItemDecoration(60)
+        val itemDecoration = MarginVerticalItemDecoration(30)
 
-        adapter.setOnClickCallback(object : FavoriteItemAdapter.OnItemClickCallback {
-            override fun onItemClicked() {
-                Toast.makeText(requireActivity(), "Go To Product Detail", Toast.LENGTH_SHORT).show()
-            }
-        })
-        adapter.setOnFavoriteClickCallback(object : FavoriteItemAdapter.OnFavoriteClickCallback {
-            override fun onFavoriteClicked() {
-                Toast.makeText(requireActivity(), "Favorite Button Clicked", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        })
+        adapter.apply {
+            setOnClickCallback(object : FavoriteItemAdapter.OnItemClickCallback {
+                override fun onItemClicked() {
+                    "Go To Product Detail".makeToast(requireActivity())
+                }
+            })
+            setOnFavoriteClickCallback(object : FavoriteItemAdapter.OnFavoriteClickCallback {
+                override fun onFavoriteClicked() {
+                    "Favorite Button Clicked".makeToast(requireActivity())
+                }
+            })
+        }
 
         binding.apply {
             rvFavorites.adapter = adapter

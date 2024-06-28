@@ -59,4 +59,19 @@
     <string name="remove">Remove</string>
     <string name="subtotal">Subtotal</string>
     <string name="continue_to_checkout">Continue to Checkout</string>
+    <string name="checkout_details">Checkout Details</string>
+    <string name="checkout_now">Checkout Now</string>
+    <string name="list_items">List Items</string>
+    <string name="address_details">Address Details</string>
+    <string name="store_location">Store Location</string>
+    <string name="your_address">Your Address</string>
+    <string name="payment_summary">Payment Summary</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="product_price">Product Price</string>
+    <string name="shipping">Shipping</string>
+    <string name="total">Total</string>
+    <string name="quantity">%d Items</string>
+    <string name="free">Free</string>
+    <string name="shamo_official_location">Shamo Official Location</string>
+    <string name="customer_address">Jalan Jalan</string>
 </resources>
