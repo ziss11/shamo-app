@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cart_item_bg"
+    android:orientation="vertical"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="12dp"
+            app:shapeAppearanceOverlay="@style/RoundedCorner16"
+            tools:src="@drawable/shoes_example" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvProductName"
+                style="@style/FontSemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="14sp"
+                tools:text="Terrex Urban Low" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrice"
+                style="@style/FontRegular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                tools:text="Rp25.000" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btnIncreaseQty"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/increase_quantity_button"
+                android:src="@drawable/ic_circle_plus" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvQty"
+                style="@style/FontMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="1dp"
+                android:textSize="14sp"
+                tools:text="2" />
+
+            <ImageView
+                android:id="@+id/btnDecreaseQty"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/decrease_quantity_button"
+                android:src="@drawable/ic_circle_minus" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/btnRemove"
+        style="@style/FontLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:drawableStart="@drawable/ic_trash"
+        android:drawablePadding="4dp"
+        android:text="@string/remove"
+        android:textColor="@color/red"
+        android:textSize="12sp" />
+
+</LinearLayout>

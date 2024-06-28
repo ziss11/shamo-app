@@ -65,9 +65,11 @@
             style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_email"
+            android:drawableStart="@drawable/ic_full_name"
             android:drawablePadding="16dp"
             android:hint="@string/your_full_name"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -99,9 +101,11 @@
             style="@style/FontRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_email"
+            android:drawableStart="@drawable/ic_username"
             android:drawablePadding="16dp"
             android:hint="@string/your_username"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -136,6 +140,8 @@
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="16dp"
             android:hint="@string/your_email_address"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -171,6 +177,7 @@
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="16dp"
             android:hint="@string/your_password"
+            android:imeOptions="actionGo"
             android:inputType="textPassword"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />

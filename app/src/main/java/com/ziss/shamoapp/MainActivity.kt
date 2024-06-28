@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setUpNavHostFragment() {
         val navHostFragment =
-            supportFragmentManager.findFragmentById(binding.container.id) as NavHostFragment
+            supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         val navController = navHostFragment.navController
 
         binding.bottomNavView.setupWithNavController(navController)
@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         @JvmStatic
         fun start(context: Context) {
             Intent(context, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 context.startActivity(this)
             }
         }

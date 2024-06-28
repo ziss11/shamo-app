@@ -61,15 +61,13 @@ class ChatsFragment : Fragment(), View.OnClickListener {
             rvChats.addItemDecoration(marginItemDecoration)
         }
 
-        setEmptyStateVisibility(false)
-        setMessageListVisibility(true)
+        setChatListVisibility(true)
     }
 
-    private fun setEmptyStateVisibility(isVisible: Boolean) {
-        binding.emptyStateContainer.visibility = if (isVisible) View.VISIBLE else View.GONE
-    }
-
-    private fun setMessageListVisibility(isVisible: Boolean) {
-        binding.rvChats.visibility = if (isVisible) View.VISIBLE else View.GONE
+    private fun setChatListVisibility(isVisible: Boolean) {
+        binding.apply {
+            rvChats.visibility = if (isVisible) View.VISIBLE else View.GONE
+            emptyStateContainer.visibility = if (isVisible) View.GONE else View.VISIBLE
+        }
     }
 }

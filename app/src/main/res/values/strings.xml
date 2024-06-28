@@ -52,4 +52,11 @@
     <string name="phone_number">Phone Number</string>
     <string name="your_phone_number">Your Phone Number</string>
     <string name="search">Search…</string>
+    <string name="your_cart">Your Cart</string>
+    <string name="ops_your_cart_is_empty">Ops! Your Cart is Empty</string>
+    <string name="increase_quantity_button">Increase Quantity Button</string>
+    <string name="decrease_quantity_button">Decrease Quantity Button</string>
+    <string name="remove">Remove</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="continue_to_checkout">Continue to Checkout</string>
 </resources>

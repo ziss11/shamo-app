@@ -1,28 +1,10 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="16dp"
-    android:height="17dp"
-    android:viewportWidth="16"
-    android:viewportHeight="17">
+    android:width="18dp"
+    android:height="20dp"
+    android:viewportWidth="18"
+    android:viewportHeight="20">
   <path
-      android:pathData="M0,7.737C0,6.342 1.194,5.21 2.667,5.21H13.333C14.806,5.21 16,6.342 16,7.737V14.474C16,15.869 14.806,17 13.333,17H2.667C1.194,17 0,15.869 0,14.474V7.737Z"
-      android:fillColor="#6C5ECF"/>
-  <path
-      android:pathData="M4.444,5.211C4.444,3.526 4.889,1 8,1C11.111,1 11.555,3.526 11.556,5.211"
-      android:strokeLineJoin="round"
-      android:strokeWidth="2"
-      android:fillColor="#00000000"
-      android:strokeColor="#6C5ECF"
-      android:strokeLineCap="round"/>
-  <path
-      android:strokeWidth="1"
-      android:pathData="M9.278,10.263C9.278,10.892 8.731,11.447 8,11.447C7.268,11.447 6.722,10.892 6.722,10.263C6.722,9.634 7.268,9.079 8,9.079C8.731,9.079 9.278,9.634 9.278,10.263Z"
+      android:pathData="M6,6C6,5.049 6.125,4.011 6.559,3.24C6.766,2.872 7.038,2.575 7.4,2.365C7.763,2.155 8.271,2 9,2C9.729,2 10.238,2.155 10.6,2.365C10.962,2.575 11.233,2.872 11.441,3.24C11.875,4.011 12,5.049 12,6H6ZM4,6C4,4.951 4.125,3.489 4.816,2.26C5.171,1.628 5.681,1.05 6.397,0.635C7.112,0.22 7.979,0 9,0C10.021,0 10.887,0.22 11.603,0.635C12.319,1.05 12.829,1.628 13.184,2.26C13.875,3.489 14,4.951 14,6V6H15C16.657,6 18,7.343 18,9V17C18,18.657 16.657,20 15,20H3C1.343,20 0,18.657 0,17V9C0,7.343 1.343,6 3,6H4ZM8,13.732C7.402,13.387 7,12.74 7,12C7,10.895 7.895,10 9,10C10.105,10 11,10.895 11,12C11,12.74 10.598,13.387 10,13.732V15C10,15.552 9.552,16 9,16C8.448,16 8,15.552 8,15V13.732Z"
       android:fillColor="#6C5ECF"
-      android:strokeColor="#2B2937"/>
-  <path
-      android:pathData="M8,12.79V10.263"
-      android:strokeLineJoin="round"
-      android:strokeWidth="2"
-      android:fillColor="#00000000"
-      android:strokeColor="#2B2937"
-      android:strokeLineCap="round"/>
+      android:fillType="evenOdd"/>
 </vector>

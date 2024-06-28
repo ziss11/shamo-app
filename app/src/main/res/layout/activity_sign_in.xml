@@ -67,6 +67,8 @@
             android:drawableStart="@drawable/ic_email"
             android:drawablePadding="16dp"
             android:hint="@string/your_email_address"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -102,7 +104,9 @@
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="16dp"
             android:hint="@string/your_password"
+            android:imeOptions="actionDone"
             android:inputType="textPassword"
+            android:maxLines="1"
             android:textColorHint="@color/grey"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>

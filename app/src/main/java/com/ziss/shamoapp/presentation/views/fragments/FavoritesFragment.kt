@@ -67,15 +67,13 @@ class FavoritesFragment : Fragment(), View.OnClickListener {
             rvFavorites.addItemDecoration(itemDecoration)
         }
 
-        setEmptyStateVisibility(false)
         setFavoriteListVisibility(true)
     }
 
-    private fun setEmptyStateVisibility(isVisible: Boolean) {
-        binding.emptyStateContainer.visibility = if (isVisible) View.VISIBLE else View.GONE
-    }
-
     private fun setFavoriteListVisibility(isVisible: Boolean) {
-        binding.rvFavorites.visibility = if (isVisible) View.VISIBLE else View.GONE
+        binding.apply {
+            rvFavorites.visibility = if (isVisible) View.VISIBLE else View.GONE
+            emptyStateContainer.visibility = if (isVisible) View.GONE else View.VISIBLE
+        }
     }
 }
