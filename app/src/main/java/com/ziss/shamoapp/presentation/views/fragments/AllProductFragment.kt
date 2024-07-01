@@ -11,6 +11,7 @@ import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentAllProductBinding
 import com.ziss.shamoapp.presentation.adapters.ProductCardAdapter
 import com.ziss.shamoapp.presentation.adapters.ProductItemAdapter
+import com.ziss.shamoapp.presentation.views.activities.ProductDetailActivity
 
 class AllProductFragment : Fragment() {
     private var _binding: FragmentAllProductBinding? = null
@@ -38,6 +39,12 @@ class AllProductFragment : Fragment() {
         )
         val cardDecoration = MarginHorizontalItemDecoration(30)
 
+        cardAdapter.setOnItemClickCallback(object : ProductCardAdapter.OnItemClickCallback {
+            override fun onItemClicked() {
+                ProductDetailActivity.start(requireActivity(), 1)
+            }
+        })
+
         binding.apply {
             rvPopularList.adapter = cardAdapter
             rvPopularList.layoutManager = cardLayoutManager
@@ -54,6 +61,12 @@ class AllProductFragment : Fragment() {
                 }
             }
         val itemDecoration = MarginVerticalItemDecoration(30)
+
+        itemAdapter.setOnItemClickCallback(object : ProductItemAdapter.OnItemClickCallback {
+            override fun onItemClicked() {
+                ProductDetailActivity.start(requireActivity(), 1)
+            }
+        })
 
         binding.apply {
             rvNewArrivalList.adapter = itemAdapter

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="54dp"
+    android:layout_height="54dp"
+    app:cardCornerRadius="6dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivImage"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        tools:src="@drawable/shoes_example" />
+
+</com.google.android.material.card.MaterialCardView>

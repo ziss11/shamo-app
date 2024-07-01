@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.databinding.FragmentProductByCategoryBinding
 import com.ziss.shamoapp.presentation.adapters.ProductItemAdapter
+import com.ziss.shamoapp.presentation.views.activities.ProductDetailActivity
 
 class ProductByCategoryFragment : Fragment() {
     private var _binding: FragmentProductByCategoryBinding? = null
@@ -41,6 +42,12 @@ class ProductByCategoryFragment : Fragment() {
         val itemLayoutManager =
             LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         val itemDecoration = MarginVerticalItemDecoration(30)
+
+        itemAdapter.setOnItemClickCallback(object : ProductItemAdapter.OnItemClickCallback {
+            override fun onItemClicked() {
+                ProductDetailActivity.start(requireActivity(), 1)
+            }
+        })
 
         binding.apply {
             rvProductByCategoryList.adapter = itemAdapter

@@ -74,4 +74,13 @@
     <string name="free">Free</string>
     <string name="shamo_official_location">Shamo Official Location</string>
     <string name="customer_address">Jalan Jalan</string>
+    <string name="cart_button">Cart Button</string>
+    <string name="cart">Cart</string>
+    <string name="gallery">Gallery</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="price_starts_from">Price starts from</string>
+    <string name="description">Description</string>
+    <string name="familiar_shoes">Familiar Shoes</string>
+    <string name="read_less">Read Less</string>
+    <string name="read_more">Read More</string>
 </resources>

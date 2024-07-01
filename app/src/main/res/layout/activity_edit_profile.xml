@@ -50,11 +50,11 @@
 
     </com.google.android.material.appbar.MaterialToolbar>
 
-    <com.google.android.material.divider.MaterialDivider
+    <include
         android:id="@+id/horizontalLine"
+        layout="@layout/appbar_horizontal_line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:dividerColor="@color/lightGrey" />
+        android:layout_height="1dp" />
 
     <ScrollView
         android:layout_width="match_parent"

@@ -7,8 +7,15 @@ import com.ziss.shamoapp.R
 import com.ziss.shamoapp.common.loadImage
 import com.ziss.shamoapp.common.toLocalCurrency
 import com.ziss.shamoapp.databinding.ProductItemBinding
+import com.ziss.shamoapp.presentation.adapters.ProductCardAdapter.OnItemClickCallback
 
 class ProductItemAdapter : RecyclerView.Adapter<ProductItemAdapter.ListViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked()
+    }
+
     inner class ListViewHolder(private val binding: ProductItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind() {
@@ -18,6 +25,8 @@ class ProductItemAdapter : RecyclerView.Adapter<ProductItemAdapter.ListViewHolde
                 tvTitle.text = "Predator 20.3 Firm Ground"
                 tvPrice.text = 20500.toLocalCurrency()
             }
+
+            itemView.setOnClickListener { onItemClickCallback.onItemClicked() }
         }
     }
 
@@ -35,4 +44,8 @@ class ProductItemAdapter : RecyclerView.Adapter<ProductItemAdapter.ListViewHolde
     }
 
     override fun getItemCount() = 5
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 }

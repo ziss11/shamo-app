@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.livedata)
+    implementation(libs.expandabletextview)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

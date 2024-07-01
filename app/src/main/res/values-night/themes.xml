@@ -1,12 +1,11 @@
 <resources>
 
-    <style name="Base.Theme.ShamoApp" parent="Theme.Material3.Dark.NoActionBar">
+    <style name="Base.Theme.ShamoApp" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:colorBackground">@color/black1</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/poppins</item>
         <item name="android:includeFontPadding">false</item>
         <item name="floatingActionButtonStyle">@style/FabStyle</item>
-        <item name="elevationOverlayEnabled">true</item>
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">

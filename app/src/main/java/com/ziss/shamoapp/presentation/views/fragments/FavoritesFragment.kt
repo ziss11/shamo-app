@@ -12,6 +12,7 @@ import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.common.makeToast
 import com.ziss.shamoapp.databinding.FragmentFavoritesBinding
 import com.ziss.shamoapp.presentation.adapters.FavoriteItemAdapter
+import com.ziss.shamoapp.presentation.views.activities.ProductDetailActivity
 
 class FavoritesFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentFavoritesBinding? = null
@@ -52,7 +53,7 @@ class FavoritesFragment : Fragment(), View.OnClickListener {
         adapter.apply {
             setOnClickCallback(object : FavoriteItemAdapter.OnItemClickCallback {
                 override fun onItemClicked() {
-                    "Go To Product Detail".makeToast(requireActivity())
+                    ProductDetailActivity.start(requireActivity(), 1)
                 }
             })
             setOnFavoriteClickCallback(object : FavoriteItemAdapter.OnFavoriteClickCallback {

@@ -53,7 +53,7 @@ class CartActivity : AppCompatActivity(), View.OnClickListener {
         adapter.apply {
             setOnItemClickCallback(object : CartItemAdapter.OnItemClickCallback {
                 override fun onItemClicked() {
-                    "Go to Product Detail".makeToast(this@CartActivity)
+                    ProductDetailActivity.start(this@CartActivity, 1)
                 }
             })
             setOnCartItemActionsCallback(object : CartItemAdapter.OnCartItemActionsCallback {

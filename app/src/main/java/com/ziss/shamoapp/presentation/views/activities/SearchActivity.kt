@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ziss.shamoapp.common.MarginVerticalItemDecoration
 import com.ziss.shamoapp.common.hideSoftKeyboard
 import com.ziss.shamoapp.databinding.ActivitySearchBinding
-import com.ziss.shamoapp.presentation.adapters.SearchProductItemAdapter
+import com.ziss.shamoapp.presentation.adapters.ProductItemAdapter
 import com.ziss.shamoapp.presentation.viewmodels.SearchViewModel
 
 class SearchActivity : AppCompatActivity() {
@@ -49,9 +49,15 @@ class SearchActivity : AppCompatActivity() {
     }
 
     private fun setupSearchedList() {
-        val adapter = SearchProductItemAdapter()
+        val adapter = ProductItemAdapter()
         val layoutManager = LinearLayoutManager(this)
         val itemDecoration = MarginVerticalItemDecoration(30)
+
+        adapter.setOnItemClickCallback(object : ProductItemAdapter.OnItemClickCallback {
+            override fun onItemClicked() {
+                ProductDetailActivity.start(this@SearchActivity, 1)
+            }
+        })
 
         binding.apply {
             rvSearchedList.adapter = adapter

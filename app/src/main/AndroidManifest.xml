@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ShamoApp"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.views.activities.ProductDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.views.activities.CheckoutActivity"
             android:exported="false" />
         <activity
