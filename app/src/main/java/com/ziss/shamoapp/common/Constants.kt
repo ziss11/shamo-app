@@ -1,5 +1,5 @@
 package com.ziss.shamoapp.common
 
 object Constants {
-    const val loginFailedMessage = "Login Gagal"
+    const val signOutSuccessMessage = "Logout Berhasil"
 }
