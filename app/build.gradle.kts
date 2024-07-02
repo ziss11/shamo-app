@@ -56,6 +56,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.expandabletextview)
     implementation(libs.firebase.auth)
+    testImplementation(libs.junit)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
