@@ -2,6 +2,8 @@ package com.ziss.shamoapp.domain.usecases.auth
 
 import com.ziss.shamoapp.common.ResultState
 import com.ziss.shamoapp.domain.repositories.AuthRepository
+import com.ziss.shamoapp.domain.tRegisterUser
+import com.ziss.shamoapp.domain.tUser
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
@@ -17,35 +19,28 @@ import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class UserSignInTest {
+class UserSignUpTest {
     @Mock
     private lateinit var authRepository: AuthRepository
-    private lateinit var usecase: UserSignIn
+    private lateinit var usecase: UserSignUp
 
     @Before
     fun setUp() {
         authRepository = mock()
-        usecase = UserSignIn(authRepository)
+        usecase = UserSignUp(authRepository)
     }
 
-    private val tEmail = "email@email.com"
-    private val tPassword = "password"
-    private val tAccessToken = "access_token"
-
     @Test
-    fun `should sign in user when execute function is called`() = runTest {
+    fun `should add new user when execute function is called`() = runTest {
         // arrange
-        `when`(
-            authRepository.signIn(
-                tEmail,
-                tPassword
-            )
-        ).thenReturn(MutableStateFlow(ResultState.Success(tAccessToken)))
+        `when`(authRepository.signUp(tRegisterUser)).thenReturn(
+            MutableStateFlow(ResultState.Success(tUser))
+        )
         // act
-        val result = usecase.execute(tEmail, tPassword)
+        val result = usecase.execute(tRegisterUser)
         // assert
-        verify(authRepository).signIn(tEmail, tPassword)
+        verify(authRepository).signUp(tRegisterUser)
         assertTrue(result.first() is ResultState.Success)
-        assertEquals((result.first() as ResultState.Success).data, tAccessToken)
+        assertEquals((result.first() as ResultState.Success).data, tUser)
     }
 }

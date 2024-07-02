@@ -17,34 +17,34 @@ import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class UserSignInTest {
+class UserGoogleSignInTest {
     @Mock
     private lateinit var authRepository: AuthRepository
-    private lateinit var usecase: UserSignIn
+    private lateinit var usecase: UserGoogleSignIn
 
     @Before
     fun setUp() {
         authRepository = mock()
-        usecase = UserSignIn(authRepository)
+        usecase = UserGoogleSignIn(authRepository)
     }
 
-    private val tEmail = "email@email.com"
-    private val tPassword = "password"
+    private val tGoogleTokenId = "google_token_id"
     private val tAccessToken = "access_token"
 
     @Test
-    fun `should sign in user when execute function is called`() = runTest {
+    fun `should sign in user with google account when execute function is called`() = runTest {
         // arrange
-        `when`(
-            authRepository.signIn(
-                tEmail,
-                tPassword
+        `when`(authRepository.signInWithGoogle(tGoogleTokenId)).thenReturn(
+            MutableStateFlow(
+                ResultState.Success(
+                    tAccessToken
+                )
             )
-        ).thenReturn(MutableStateFlow(ResultState.Success(tAccessToken)))
+        )
         // act
-        val result = usecase.execute(tEmail, tPassword)
+        val result = usecase.execute(tGoogleTokenId)
         // assert
-        verify(authRepository).signIn(tEmail, tPassword)
+        verify(authRepository).signInWithGoogle(tGoogleTokenId)
         assertTrue(result.first() is ResultState.Success)
         assertEquals((result.first() as ResultState.Success).data, tAccessToken)
     }
