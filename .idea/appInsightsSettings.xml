@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.ziss.shamoapp" />
+                  <option name="mobileSdkAppId" value="1:625443998541:android:057f993cb1ce474299c504" />
+                  <option name="projectId" value="shamo-app-8b80a" />
+                  <option name="projectNumber" value="625443998541" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

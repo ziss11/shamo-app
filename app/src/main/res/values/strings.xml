@@ -83,4 +83,7 @@
     <string name="familiar_shoes">Familiar Shoes</string>
     <string name="read_less">Read Less</string>
     <string name="read_more">Read More</string>
+    <string name="or">or</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="sign_up_with_google">Sign Up with Google</string>
 </resources>

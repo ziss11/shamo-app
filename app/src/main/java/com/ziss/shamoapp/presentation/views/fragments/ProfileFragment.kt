@@ -35,6 +35,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         when (view?.id) {
             binding.btnLogout.id -> {
                 SignInActivity.start(requireActivity())
+                requireActivity().finish()
             }
 
             binding.settingEditProfile.container.id -> {
