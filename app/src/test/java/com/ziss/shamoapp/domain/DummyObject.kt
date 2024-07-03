@@ -16,7 +16,4 @@ val tUser = User(
     "email",
     "phone",
     "username",
-    "googleId",
-    "googleToken",
-    "googleRefreshToken"
 )

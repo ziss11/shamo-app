@@ -15,8 +15,5 @@ class UserTest {
         assertEquals(user.email, "email")
         assertEquals(user.phone, "phone")
         assertEquals(user.username, "username")
-        assertEquals(user.googleId, "googleId")
-        assertEquals(user.googleToken, "googleToken")
-        assertEquals(user.googleRefreshToken, "googleRefreshToken")
     }
 }
