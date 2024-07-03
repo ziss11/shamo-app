@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -43,7 +42,6 @@ class GetCurrentUserTest {
         val result = usecase.execute()
         // assert
         verify(userRepository).getCurrentUser()
-        assertTrue(result.first() is ResultState.Success)
-        assertEquals((result.first() as ResultState.Success).data, tUser)
+        assertEquals(result.first(), ResultState.Success(tUser))
     }
 }

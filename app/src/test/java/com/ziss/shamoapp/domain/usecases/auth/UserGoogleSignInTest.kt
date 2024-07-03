@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -45,7 +44,6 @@ class UserGoogleSignInTest {
         val result = usecase.execute(tGoogleTokenId)
         // assert
         verify(authRepository).signInWithGoogle(tGoogleTokenId)
-        assertTrue(result.first() is ResultState.Success)
-        assertEquals((result.first() as ResultState.Success).data, tAccessToken)
+        assertEquals(result.first(), ResultState.Success(tAccessToken))
     }
 }
