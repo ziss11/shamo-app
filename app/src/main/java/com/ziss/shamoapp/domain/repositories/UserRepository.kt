@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
     fun getCurrentUser(): Flow<ResultState<User>>
+    fun updateProfile(user: User): Flow<ResultState<User>>
 }
