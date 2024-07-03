@@ -23,4 +23,13 @@ class RegisterUserModelTest {
         val result = tRegisterUserModel.toEntity()
         assertEquals(result, tRegisterUser)
     }
+
+    @Test
+    fun `should return a valid model from entity`() {
+        // act
+        val entity = tRegisterUser
+        // assert
+        val result = RegisterUserModel(entity)
+        assertEquals(tRegisterUser, tRegisterUser)
+    }
 }

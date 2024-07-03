@@ -8,6 +8,13 @@ data class RegisterUserModel(
     val email: String,
     val password: String,
 ) {
+    constructor(registerUser: RegisterUser) : this(
+        registerUser.fullName,
+        registerUser.username,
+        registerUser.email,
+        registerUser.password
+    )
+
     fun toEntity() = RegisterUser(
         fullName,
         username,

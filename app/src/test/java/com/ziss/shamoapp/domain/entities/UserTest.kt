@@ -11,7 +11,7 @@ class UserTest {
         val user = tUser
         // assert
         assertEquals(user.id, 1)
-        assertEquals(user.name, "name")
+        assertEquals(user.fullName, "fullName")
         assertEquals(user.email, "email")
         assertEquals(user.phone, "phone")
         assertEquals(user.username, "username")
