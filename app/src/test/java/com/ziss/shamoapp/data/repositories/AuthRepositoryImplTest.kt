@@ -2,8 +2,8 @@ package com.ziss.shamoapp.data.repositories
 
 import com.ziss.shamoapp.common.Constants
 import com.ziss.shamoapp.common.ResultState
-import com.ziss.shamoapp.data.datasource.auth.AuthLocalDataSource
-import com.ziss.shamoapp.data.datasource.auth.AuthRemoteDataSource
+import com.ziss.shamoapp.data.datasource.local.AuthLocalDataSource
+import com.ziss.shamoapp.data.datasource.remote.AuthRemoteDataSource
 import com.ziss.shamoapp.domain.tRegisterUser
 import com.ziss.shamoapp.domain.tRegisterUserModel
 import com.ziss.shamoapp.domain.tUser
@@ -145,7 +145,7 @@ class AuthRepositoryImplTest {
             // arrange
             `when`(localDataSource.getAccessToken()).thenReturn(tAccessToken)
             `when`(remoteDataSource.signOut(tAccessToken)).thenReturn(flow {
-                emit(Constants.signOutSuccessMessage)
+                emit(Constants.SIGN_OUT_SUCCESS_MESSAGE)
             })
             // act
             val flow = authRepository.signOut()
@@ -153,7 +153,7 @@ class AuthRepositoryImplTest {
             // assert
             assertEquals(results[0], ResultState.Loading)
             assertTrue(results[1] is ResultState.Success)
-            assertEquals(results[1], ResultState.Success(Constants.signOutSuccessMessage))
+            assertEquals(results[1], ResultState.Success(Constants.SIGN_OUT_SUCCESS_MESSAGE))
         }
 
     @Test

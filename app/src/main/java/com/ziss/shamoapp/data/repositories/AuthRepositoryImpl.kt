@@ -1,8 +1,8 @@
 package com.ziss.shamoapp.data.repositories
 
 import com.ziss.shamoapp.common.ResultState
-import com.ziss.shamoapp.data.datasource.auth.AuthLocalDataSource
-import com.ziss.shamoapp.data.datasource.auth.AuthRemoteDataSource
+import com.ziss.shamoapp.data.datasource.local.AuthLocalDataSource
+import com.ziss.shamoapp.data.datasource.remote.AuthRemoteDataSource
 import com.ziss.shamoapp.data.models.RegisterUserModel
 import com.ziss.shamoapp.domain.entities.RegisterUser
 import com.ziss.shamoapp.domain.entities.User

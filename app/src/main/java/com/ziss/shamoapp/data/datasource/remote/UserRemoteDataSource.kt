@@ -1,4 +1,4 @@
-package com.ziss.shamoapp.data.datasource.user
+package com.ziss.shamoapp.data.datasource.remote
 
 import com.ziss.shamoapp.data.models.UserModel
 import kotlinx.coroutines.flow.Flow

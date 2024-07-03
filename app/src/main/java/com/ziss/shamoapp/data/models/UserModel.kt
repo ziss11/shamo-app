@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 import com.ziss.shamoapp.domain.entities.User
 
 data class UserModel(
-    @SerializedName("id") val id: Int,
-    @SerializedName("fullName") val fullName: String,
-    @SerializedName("email") val email: String,
-    @SerializedName("phone") val phone: String,
-    @SerializedName("username") val username: String,
+    @field: SerializedName("id") val id: Int,
+    @field: SerializedName("fullName") val fullName: String,
+    @field: SerializedName("email") val email: String,
+    @field: SerializedName("phone") val phone: String,
+    @field: SerializedName("username") val username: String,
 ) {
     constructor(user: User) : this(
         user.id,

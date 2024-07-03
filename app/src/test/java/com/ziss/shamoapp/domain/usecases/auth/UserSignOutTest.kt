@@ -34,7 +34,7 @@ class UserSignOutTest {
         `when`(authRepository.signOut()).thenReturn(
             MutableStateFlow(
                 ResultState.Success(
-                    Constants.signOutSuccessMessage
+                    Constants.SIGN_OUT_SUCCESS_MESSAGE
                 )
             )
         )
@@ -42,6 +42,6 @@ class UserSignOutTest {
         val result = usecase.execute()
         // assert
         verify(authRepository).signOut()
-        assertEquals(result.first(), ResultState.Success(Constants.signOutSuccessMessage))
+        assertEquals(result.first(), ResultState.Success(Constants.SIGN_OUT_SUCCESS_MESSAGE))
     }
 }
