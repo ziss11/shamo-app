@@ -1,7 +1,7 @@
 package com.ziss.shamoapp.data.repositories
 
 import com.ziss.shamoapp.common.ResultState
-import com.ziss.shamoapp.data.datasource.user.UserLocalDataSource
+import com.ziss.shamoapp.data.datasource.auth.AuthLocalDataSource
 import com.ziss.shamoapp.data.datasource.user.UserRemoteDataSource
 import com.ziss.shamoapp.domain.tUser
 import com.ziss.shamoapp.domain.tUserModel
@@ -24,7 +24,7 @@ class UserRepositoryImplTest {
     private lateinit var remoteDataSource: UserRemoteDataSource
 
     @Mock
-    private lateinit var localDataSource: UserLocalDataSource
+    private lateinit var localDataSource: AuthLocalDataSource
 
     private lateinit var userRepository: UserRepositoryImpl
 

@@ -1,7 +1,7 @@
 package com.ziss.shamoapp.data.repositories
 
 import com.ziss.shamoapp.common.ResultState
-import com.ziss.shamoapp.data.datasource.user.UserLocalDataSource
+import com.ziss.shamoapp.data.datasource.auth.AuthLocalDataSource
 import com.ziss.shamoapp.data.datasource.user.UserRemoteDataSource
 import com.ziss.shamoapp.data.models.UserModel
 import com.ziss.shamoapp.domain.entities.User
@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.map
 
 class UserRepositoryImpl(
     private val remoteDataSource: UserRemoteDataSource,
-    private val localDataSource: UserLocalDataSource
+    private val localDataSource: AuthLocalDataSource
 ) : UserRepository {
     override fun getCurrentUser(): Flow<ResultState<User>> = flow {
         emit(ResultState.Loading)
